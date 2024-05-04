@@ -7,11 +7,12 @@ import { NumberTransition } from './NumberTransition'
 import { Slide } from 'react-awesome-reveal'
 import Navbar from './Navbar'
 
-const Hero = () => {
+const AboutUsSection = () => {
   return (
     <div  >
+      <Navbar />
 
-      <section  style={{height:window.innerHeight-100}} className="max-container padding-container flex flex-row  pb-4 md:gap-10 lg:py-10 xl:flex-row">
+      <section  style={{height:window.innerHeight-100}} className="max-container padding-container flex flex-col  pb-10 md:gap-10 lg:py-10 xl:flex-row">
 
 
 
@@ -20,7 +21,7 @@ const Hero = () => {
           <div >
 
             <Space h={120} />
-            <h1 className="font-bold text-[22px] lg:bold-12 text-white">Welcome to Marwah Travels Umrah <br /> Your Offical Agent To Makkah and Madina</h1>
+            <h1 className="font-bold text-[30px] lg:bold-12 mt-10 text-white">Welcome to Marwah Travels Umrah <br /> Your Offical Agent To Makkah and Madina</h1>
             <p className="regular-16 mt-3
  text-slate-200 xl:max-w-[520px]">
               {
@@ -117,4 +118,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default AboutUsSection

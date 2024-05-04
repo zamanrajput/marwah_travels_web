@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import 'react-circular-progressbar/dist/styles.css';
 
 @tailwind base;
 @tailwind components;
@@ -16,13 +17,19 @@ body {
 
 @layer utilities {
   .btn_white { 
-    @apply  border-white bg-white px-8 py-3 text-green-50
+    @apply  border-white bg-white px-10 py-2 text-black
   }
   .btn_white_text  { 
     @apply  border-white bg-white px-8 py-3 text-gray-90
   }
   .btn_green  { 
     @apply  border-green-50 bg-green-50 px-8 py-5 text-white
+  }
+  .btn_red  { 
+    @apply  border-red-400 bg-red-400 px-8 py-5 text-white
+  }
+  .btn_blue  { 
+    @apply  border-blue-400 bg-blue-400 px-8 py-5 text-white
   }
   .btn_dark_green { 
     @apply  bg-green-90 px-8 py-4 text-white transition-all hover:bg-black

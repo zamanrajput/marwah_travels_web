@@ -1,33 +1,29 @@
-import { FEATURES } from '@/constants'
+import { FEATURES, transparentBlack } from '@/constants'
 import Image from 'next/image'
 import React from 'react'
+import { Slide } from 'react-awesome-reveal'
 
 const Features = () => {
   return (
-    <section className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
-      <div className="max-container padding-container relative w-full flex justify-end">
-        <div className="flex flex-1 lg:min-h-[900px]">
+    <section className="flex-col flexCenter overflow-hidden bg-center bg-no-repeat py-24 rounded-3xl  mx-6 " style={{backgroundColor:transparentBlack}}>
+      <div className="max-container padding-container relative w-full flex justify-end ">
+        <div className="flex flex-1 ">
           <Image
-            src="/phone.png"
+          className='rounded-3xl h-[640px] mt-36'
+            src="/kaba3.jpg"
             alt="phone"
-            width={440}
+            width={430}
             height={1000}
-            className="feature-phone"
+            
           />
         </div>
 
-        <div className="z-20 flex w-full flex-col lg:w-[60%]">
+        <div className="z-20 flex w-full flex-col lg:w-[60%] ">
           <div className='relative'>
-            <Image
-              src="/camp.svg"
-              alt="camp"
-              width={50}
-              height={50}
-              className="absolute left-[-5px] top-[-28px] w-10 lg:w-[50px]"
-            />
-            <h2 className="bold-40 lg:bold-64">Our Features</h2>
+         
+            <Slide><h2 className="bold-40 lg:bold-64 text-slate-200">Why Us?</h2></Slide>
           </div>
-          <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
+          <ul className=" mt-10 grid mx-3 gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
             {FEATURES.map((feature) => (
               <FeatureItem 
                 key={feature.title}
@@ -55,10 +51,10 @@ const FeatureItem = ({ title, icon, description }: FeatureItem) => {
       <div className="rounded-full p-4 lg:p-7 bg-green-50">
         <Image src={icon} alt="map" width={28} height={28} />
       </div>
-      <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
+      <h2 className="bold-20 lg:bold-32 mt-5 text-white capitalize">
         {title}
       </h2>
-      <p className="regular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">
+      <p className="regular-16 mt-5 text-white lg:mt-[30px] lg:bg-none">
         {description}
       </p>
     </li>

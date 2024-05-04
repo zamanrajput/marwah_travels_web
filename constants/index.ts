@@ -1,10 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
-  { href: '/', key: 'how_hilink_work', label: 'How Hilink Work?' },
-  { href: '/', key: 'services', label: 'Services' },
-  { href: '/', key: 'pricing ', label: 'Pricing ' },
-  { href: '/', key: 'contact_us', label: 'Contact Us' },
+  { href: '/#packages', key: 'all_packages', label: 'All Umrah Packages' },
+  { href: '/blogs', key: 'blogs', label: 'Blogs' },
+  { href: '/about', key: 'about', label: 'About Us' },
 ];
 
 // CAMP SECTION
@@ -18,32 +17,32 @@ export const PEOPLE_URL = [
 // FEATURES SECTION
 export const FEATURES = [
   {
-    title: 'Real maps can be offline',
+    title: 'Realtime Tracking',
     icon: '/map.svg',
     variant: 'green',
     description:
       'We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location',
   },
   {
-    title: 'Set an adventure schedule',
+    title: 'Schedule',
     icon: '/calendar.svg',
     variant: 'green',
     description:
-      "Schedule an adventure with friends. On holidays, there are many interesting offers from Hilink. That way, there's no more discussion",
+      "Schedule an adventure with friends. On holidays, there are many interesting offers from Marwah Travels. That way, there's no more discussion",
   },
   {
-    title: 'Technology using augment reality',
+    title: 'Support',
     icon: '/tech.svg',
     variant: 'green',
     description:
       'Technology uses augmented reality as a guide to your hiking trail in the forest to the top of the mountain. Already supported by the latest technology without an internet connection',
   },
   {
-    title: 'Many new locations every month',
+    title: 'Many new Packages Every Month',
     icon: '/location.svg',
     variant: 'orange',
     description:
-      'Lots of new locations every month, because we have a worldwide community of climbers who share their best experiences with climbing',
+      'Lots of new packages are being uploaded every month, because we have a worldwide community of climbers who share their best experiences with climbing',
   },
 ];
 
@@ -52,7 +51,7 @@ export const FOOTER_LINKS = [
   {
     title: 'Learn More',
     links: [
-      'About Hilink',
+      'About Marwah Travels',
       'Press Releases',
       'Environment',
       'Jobs',
@@ -62,7 +61,7 @@ export const FOOTER_LINKS = [
   },
   {
     title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+    links: ['Climbing xixixi', 'Hiking Marwah Travels', 'Marwah Travels kinthill'],
   },
 ];
 
@@ -70,9 +69,17 @@ export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
     { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'hilink@akinthil.com' },
+    { label: 'Email Officer', value: 'Marwah Travels@akinthil.com' },
   ],
 };
+
+
+export const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+
+
+export const transparentBlack = 'rgba(0,0,0,0.6)';
+export const lightWhite = 'rgba(255,255,255,0.8)';
 
 export const SOCIALS = {
   title: 'Social',
@@ -80,7 +87,6 @@ export const SOCIALS = {
     '/facebook.svg',
     '/instagram.svg',
     '/twitter.svg',
-    '/youtube.svg',
-    '/wordpress.svg',
+    '/youtube.svg'
   ],
 };
