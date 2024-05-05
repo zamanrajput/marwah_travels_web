@@ -9,8 +9,8 @@ const Navbar = () => {
   return (
     <nav className=" flex items-center gap-20 bg-black/30 max-container padding-container relative z-30 py-5">
       <Link href="/">
-        {/* <Image src="/logo.png" alt="logo" width={200} height={19} /> */}
-        <span className="text-white text-3xl font-bold">Marwah Travels</span>
+        <Image src="/logo2.png" alt="logo" width={200} height={19} />
+        {/* <span className="text-white text-3xl font-bold">Marwah Travels</span> */}
       </Link>
 
       <ul className="hidden h-full gap-12 lg:flex items-center ">

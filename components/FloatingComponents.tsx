@@ -55,8 +55,8 @@ export default function FloatingComponents() {
                 onClick={()=>{window.location.href = "https://wa.link/80d6qr";}}
 
                     type="button"
-                    icon="/wa.svg"
-                    variant="btn_green"
+                    icon="/wa.png"
+                    variant="btn_white"
                 />
             </div>
         </div>
