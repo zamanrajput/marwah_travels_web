@@ -97,14 +97,14 @@ const InquiryForm = () => {
 
 
 
-    <div>
+    <div className='w-full '>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sm={12}>
         {/* 1 */}
         <Toaster position='bottom-right'  />
 
         <Grid item xs={12} sm={12}>
-          <span className='bold-54 text-white font-bold text-3xl'>
+          <span className='bold-54 text-white font-bold sm:text-3xl text-xl'>
             Quick Inquiry Form
           </span>
         </Grid>
@@ -133,11 +133,8 @@ const InquiryForm = () => {
         <Grid item xs={12} sm={12}>
           <Button
             type="button"
-
             title='Submit Query'
-            variant="btn_white" onClick={submitInquiry}         >
-
-          </Button>
+            variant="btn_white" onClick={submitInquiry} />
         </Grid>
       </Grid>
 

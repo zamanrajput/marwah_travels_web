@@ -183,13 +183,13 @@ export default function PackagesSection() {
                                             <Space h={20} />
 
                                             <div className="flexBetween mx-2">
-                                                <div className="hover:bg-green-700 bg-green-600 cursor-pointer  hover:shadow-3xl p-3 rounded-full shadow-sm">
+                                                <div onClick={()=>window.open("tel:+"+pack.whatsapp,"_blank")} className="hover:bg-green-700 bg-green-600 cursor-pointer  hover:shadow-3xl p-3 rounded-full shadow-sm">
                                                     <Call style={{ color: 'white' }} />
                                                 </div>
-                                                <div className=" bg-orange-500  hover:bg-orange-600 p-3 cursor-pointer rounded-full shadow-sm">
+                                                <div onClick={()=>window.open("mailto:"+pack.email,"_blank")} className=" bg-orange-500  hover:bg-orange-600 p-3 cursor-pointer rounded-full shadow-sm">
                                                     <Email style={{ color: 'white' }} />
                                                 </div>
-                                                <div className="bg-gray-700 cursor-pointer hover:bg-black  p-3 rounded-full shadow-sm">
+                                                <div onClick={()=>window.open("https://api.whatsapp.com/send?phone="+pack.whatsapp,"_blank")}  className="bg-gray-700 cursor-pointer hover:bg-black  p-3 rounded-full shadow-sm">
                                                     <WhatsApp style={{ color: 'white' }} />
                                                 </div>
                                             </div>

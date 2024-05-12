@@ -4,16 +4,17 @@ import Email from "@mui/icons-material/Email";
 import Button from "./Button";
 import CallIcon from '@mui/icons-material/Call';
 import Space from "./Space";
+import { WhatsApp } from "@mui/icons-material";
 export default function FloatingComponents() {
 
     return (
-        <div className="flex " >
+        <div className="flex" >
             <div
                 className="fixed bottom-5 right-5 shadow-lg z-40"
 
             >
                 <Button
-                onClick={()=>{window.location.href = "tel:+923077045417";}}
+                    onClick={() => { window.location.href = "tel:+923077045417"; }}
 
 
                     type="button"
@@ -22,10 +23,10 @@ export default function FloatingComponents() {
                     variant="btn_blue"
                 />
                 <Space h={10} />
-                
+
                 <Button
                     type="button"
-                    onClick={()=>{window.location.href = "/#inquiry";}}
+                    onClick={() => { window.location.href = "/#inquiry"; }}
 
 
                     child={<Email />}
@@ -37,11 +38,11 @@ export default function FloatingComponents() {
 
             >
                 <Button
-                onClick={()=>{window.location.href = "/#customPackage";}}
-
+                    onClick={() => { window.location.href = "/#customPackage"; }}
                     type="button"
                     title="Create Custom Package"
                     variant="btn_green"
+                   
                 />
 
             </div>
@@ -52,10 +53,10 @@ export default function FloatingComponents() {
             >
 
                 <Button
-                onClick={()=>{window.location.href = "https://wa.link/80d6qr";}}
+                    onClick={() => { window.location.href = "https://wa.link/80d6qr"; }}
 
                     type="button"
-                    icon="/wa.png"
+                    child={<WhatsApp/>}
                     variant="btn_white"
                 />
             </div>

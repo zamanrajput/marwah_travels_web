@@ -1,6 +1,7 @@
 import { Blog } from "../type/Blog";
+import { Hotel } from "../type/Hotel";
 import { UmrahPackage } from "../type/UmrahPackage";
-import { POST_CREATE_PACKAGE, POST_UPDATE_PACKAGE } from "./Routes";
+import { POST_CREATE_PACKAGE, POST_UPDATE_HOTEL, POST_UPDATE_PACKAGE } from "./Routes";
 
 
 export type ApiCallProps = {
@@ -145,6 +146,49 @@ export async function createPackage(p: UmrahPackage,category_id:string, onStart:
         .catch((error) => onUnexpected(error)).finally(onProgressEnd);
 }
 
+export async function createHotel(p: Hotel, onStart:()=>void, onProgressEnd:()=>void, onSuccess:(res:any)=>any, onUnexpected:(error:any)=>void){
+    
+    onStart();
+    const formdata = new FormData();
+    formdata.append("name", p.name);
+    formdata.append("charges", p.charges.toString());
+    formdata.append("rating", p.rating.toString());
+    formdata.append("location", p.location.toString());
+
+    formdata.append("currency", p.currency);
+    formdata.append("description", p.description??"");
+    formdata.append("email",p.email);
+
+    formdata.append("phone", p.phone);
+
+
+    formdata.append("breakfast_enabled",p.breakfast_enabled?'1':'0');
+    formdata.append("dinner_enabled", p.dinner_enabled?'1':'0');
+
+
+  
+    if(p.image){
+        const res = await fetch(p.image);
+        if (res.ok) {
+            const blob = await res.blob();
+            formdata.append("image", blob, p.image);
+        }
+    }
+
+
+
+    const requestOptions:RequestInit = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow"
+    };
+
+    await fetch("http://localhost:8000/api/hotels/create", requestOptions)
+        .then((response) => response.text())
+        .then((result) =>onSuccess(result))
+        .catch((error) => onUnexpected(error)).finally(onProgressEnd);
+}
+
 
 export async function createBlog(p: Blog, onStart:()=>void, onProgressEnd:()=>void, onSuccess:(res:any)=>any, onUnexpected:(error:any)=>void){
     
@@ -247,6 +291,53 @@ export async function updateBlogCloud(p: Blog, onStart:()=>void, onProgressEnd:(
         .then((result) =>onSuccess(result))
         .catch((error) => onUnexpected(error)).finally(onProgressEnd);
 }
+
+export async function updateHotelsCloud(p: Hotel, onStart:()=>void, onProgressEnd:()=>void, onSuccess:(res:any)=>any, onUnexpected:(error:any)=>void){
+    
+
+    onStart();
+    const formdata = new FormData();
+    formdata.append("id", p.id.toString());
+    formdata.append("name", p.name);
+    formdata.append("charges", p.charges.toString());
+    formdata.append("rating", p.rating.toString());
+    formdata.append("location", p.location.toString());
+
+    formdata.append("currency", p.currency);
+    formdata.append("description", p.description??"");
+    formdata.append("email",p.email);
+
+    formdata.append("phone", p.phone);
+
+
+    formdata.append("breakfast_enabled",p.breakfast_enabled?'1':'0');
+    formdata.append("dinner_enabled", p.dinner_enabled?'1':'0');
+
+
+  
+    if(p.image && !p.image.includes('hotel_images')){
+        const res = await fetch(p.image);
+        if (res.ok) {
+            const blob = await res.blob();
+            formdata.append("image", blob, p.image);
+        }
+    }
+
+
+
+ 
+    const requestOptions:RequestInit = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow"
+    };
+
+    await fetch(POST_UPDATE_HOTEL, requestOptions)
+        .then((response) => response.text())
+        .then((result) =>onSuccess(result))
+        .catch((error) => onUnexpected(error)).finally(onProgressEnd);
+}
+
 
 export async function updatePackageCloud(p: UmrahPackage,category_id:string, onStart:()=>void, onProgressEnd:()=>void, onSuccess:(res:any)=>any, onUnexpected:(error:any)=>void){
     

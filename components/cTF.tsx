@@ -10,12 +10,13 @@ type CTFCProps = {
     textColor?:string;
     backgroundColor?:string;
     borderColor?:string;
+    val?:string;
 
 }
 
 
-const CustomTextFieldComponent = ({ label, onChange,hintColor,backgroundColor,borderColor,textColor}:CTFCProps) => {
-  const [value, setValue] = useState('');
+const CustomTextFieldComponent = ({ val,label, onChange,hintColor,backgroundColor,borderColor,textColor}:CTFCProps) => {
+  const [value, setValue] = useState(val??"");
 
   const handleChange = (event:any) => {
     setValue(event.target.value);

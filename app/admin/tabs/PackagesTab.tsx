@@ -218,6 +218,7 @@ export function BasicTable() {
       },
       function (res: any) {
         //result
+        loadPackages();
         console.log(res);
       },
       function (e: any) {

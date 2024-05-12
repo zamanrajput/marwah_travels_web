@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 
 
 import IquerySection from "@/components/IquerySection";
+import OurPartners from "@/components/OurPartners";
 import PackagesSection from "@/components/PackagesSection";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
   
   return (
     <div >
-
+ 
         <Hero />
       
 
@@ -30,6 +31,7 @@ export default function Home() {
 
 
       <Features />
+      <OurPartners/>
       
       
     </div>

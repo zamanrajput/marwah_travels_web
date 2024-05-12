@@ -10,13 +10,19 @@ if (debug) {
 
 //panel
 export const GET_CATEGORIES = API_BASE_URL+'/panel/categories';
+export const GET_HOTELS = API_BASE_URL+'/panel/hotels';
+
 export const POST_CREATE_CATEGORY = API_BASE_URL+'/categories/create';
 export const UPDATE_CATEGORY = API_BASE_URL +'/panel/category/update';
+export const UPDATE_HOTEL = API_BASE_URL +'/panel/hotel/update';
+
 export const GET_DELETE_PACKAGE = API_BASE_URL +'/packages/delete/';
 export const GET_DELETE_BLOG = API_BASE_URL +'/blogs/delete/';
 
 export const POST_CREATE_PACKAGE = API_BASE_URL +'/packages/create';
 export const POST_UPDATE_PACKAGE = API_BASE_URL +'/packages/update';
+export const POST_UPDATE_HOTEL = API_BASE_URL +'/hotels/update';
+
 export const GET_INQUIRIES = API_BASE_URL + '/inquiries';
 export const GET_DELETE_INQUIRY = API_BASE_URL +'/inquiry/delete/';
 
