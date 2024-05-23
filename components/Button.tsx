@@ -8,7 +8,7 @@ type ButtonProps = {
   icon?: string;
   variant: string;
   full?: boolean;
-  onClick:any;
+  onClick?:any;
 }
 
 const Button = ({ type, title, icon, variant, full,child,onClick }: ButtonProps) => {
