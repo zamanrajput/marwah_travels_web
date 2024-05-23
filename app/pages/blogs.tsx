@@ -1,7 +1,7 @@
 import Space from "@/components/Space";
 
 
-import { Card, CircularProgress, Divider, Grid } from "@mui/material";
+import { Button, Card, CircularProgress, Divider, Grid } from "@mui/material";
 import Image from "next/image";
 import { Blog } from "../type/Blog";
 import { useEffect, useState } from "react";
@@ -78,7 +78,7 @@ export default function Blogs() {
         return res;
     }
     return (
-        <div className="w-full m-6 p-6  flex flex-col items-center  " >
+        <div className="w-full sm:m-6 p-6  flex flex-col items-center  " >
 
             {loading ? <div>
 
@@ -102,8 +102,8 @@ export default function Blogs() {
                                     <h1 className='text-bold text-[20px] mb-2 text-slate-100 pt-2 font-bold'>
                                         {blog.title}
                                     </h1>
-                                    <Divider sx={{ backgroundColor: 'white' }} />
-                                    {...blog.elements.map((e)=>buildElement(e))}
+                                   
+                                    <Button variant="contained" sx={{borderRadius:10,backgroundColor:'white',color:'black'}} >Read More</Button>
                                     <Space h={10} />
                                     
 

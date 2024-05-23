@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Tabs, Tab, Box, Typography, Container } from '@mui/material';
 import { IconBlob, IconMailQuestion, IconPackage, IconQuestionMark, IconUsb, IconUser, IconUserCircle } from '@tabler/icons-react';
-import { Category, HotelSharp, MedicalInformation, PostAdd } from '@mui/icons-material';
+import { Category, DocumentScanner, HotelSharp, MedicalInformation, PostAdd } from '@mui/icons-material';
 import PackagesTab from './tabs/PackagesTab';
 import CategoriesTab from './tabs/CategoriesTab';
 import { InquiriesTab } from './tabs/InquiriesTab';
 import { BlogsTab } from './tabs/BlogsTab';
 import HotelsTab from './tabs/HotelsTab';
+import { CustomPackagesTab } from './tabs/CustomPackagesTab';
+import { ReviewsTab } from './tabs/ReviewsTab';
 
 const Dashboard: React.FC = () => {
-    const [value, setValue] = useState(5);
+    const [value, setValue] = useState(6);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -46,6 +48,18 @@ const Dashboard: React.FC = () => {
                 <HotelSharp />
                 <span className='mx-2 mt-1'>Hotels</span>
             </div>
+        } className='flex flex-row flex-1' />,
+        <Tab sx={{ textTransform: 'none', padding: 0, marginX: 1 }} component="h1" icon={
+            <div className={`w-full flex-row items-center flex-center flex rounded-3xl ${value == 6 ? 'bg-yellow-500 text-white' : ' text-slate-200'} px-6 py-2  text-[20px]`} >
+                <DocumentScanner />
+                <span className='mx-2 mt-1'>Testimonials</span>
+            </div>
+        } className='flex flex-row flex-1' />,
+        <Tab sx={{ textTransform: 'none', padding: 0, marginX: 1 }} component="h1" icon={
+            <div className={`w-full flex-row items-center flex-center flex rounded-3xl ${value == 7 ? 'bg-yellow-500 text-white' : ' text-slate-200'} px-6 py-2  text-[20px]`} >
+                <IconPackage />
+                <span className='mx-2 text-[17px]'>Custom Packages</span>
+            </div>
         } className='flex flex-row flex-1' />
 
 
@@ -65,6 +79,12 @@ const Dashboard: React.FC = () => {
         </TabPanel>,
         <TabPanel value={value} index={5}>
             <HotelsTab />
+        </TabPanel>,
+        <TabPanel value={value} index={6}>
+            <ReviewsTab />
+        </TabPanel>,
+        <TabPanel value={value} index={7}>
+            <CustomPackagesTab />
         </TabPanel>
     ]
 

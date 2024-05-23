@@ -7,15 +7,15 @@ const Navbar = () => {
     return url.includes(link);
   }
   return (
-    <nav className=" flex items-center gap-20 bg-black/30 max-container padding-container relative z-30 py-5">
+    <nav className=" flex sm:items-center sm:flex-row flex-col sm:gap-20 gap-5 bg-black/30 max-container padding-container relative z-30 py-5">
       <Link href="/">
         <Image src="/logo2.png" alt="logo" width={200} height={19} />
         {/* <span className="text-white text-3xl font-bold">Marwah Travels</span> */}
       </Link>
 
-      <ul className="hidden h-full gap-12 lg:flex items-center ">
+      <ul className=" h-full sm:gap-12 gap-1 flex sm:flex-row flex-col sm:items-center ">
         {NAV_LINKS.map((link) => (
-          <Link onClick={()=>location.href = link.href} href={link.href} key={link.key} className="regular-16 text-slate-200 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
+          <Link onClick={()=>location.href = link.href} href={link.href} key={link.key} className=" text-slate-200  cursor-pointer sm:pb-1.5 transition-all hover:font-bold">
             {link.label}
           </Link>
         ))}

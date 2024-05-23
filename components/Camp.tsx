@@ -74,7 +74,7 @@ const Camp = () => {
               <strong>Welcome</strong> to Marwah Travels
             </h2>
             <p className="regular-14 xl:regular-16 mt-5 text-white">
-              {loremIpsum.substring(0, 400)}
+              Comintment over anything
             </p>
             <Image
               src="/quote.svg"

@@ -5,8 +5,9 @@ import { store, selectBlog } from "../state/store";
 import Image from "next/image";
 import BlogElement from "../type/BlogElement";
 import { BACKEND_BASE_URL } from "../db/Routes";
+import { Slide } from "react-awesome-reveal";
 
-export default function BlogDetail(){
+export default function BlogDetail() {
 
     const blog = store.getState().home.selectedBlog;
 
@@ -31,34 +32,38 @@ export default function BlogDetail(){
             );
         } else {
             res = (
-                <div className={`text-[14px] text-white` } style={{ whiteSpace: 'pre-wrap' }}>
+                <div className={`text-[14px] text-white`} style={{ whiteSpace: 'pre-wrap' }}>
                     {element.value}
                 </div>
             );
         }
 
 
-        return res;
+        return <Slide>{res}</Slide>;
     }
 
-    return ( <Card onClick={()=>{
- 
-        
-        }} className=" p-10" sx={{ borderRadius: 1, backgroundColor: transparentBlack }} elevation={4}>
-        <Image src={BACKEND_BASE_URL+ blog.image??"/kaba_image.jpg"} width={920} height={600} alt={"logo"} className="w-[900px] h-[600px]" />
+    return (<Card onClick={() => {
 
-        <div className="px-4 mt-4   ">
-            <div className="flex flex-col">
-                <h1 className='text-bold text-[20px] mb-2 text-slate-100 pt-2 font-bold'>
-                    {blog.title}
-                </h1>
-                <Divider sx={{ backgroundColor: 'white' }} />
-                {...blog.elements.map((e)=>buildElement(e))}
 
-                <Space h={10} />
+    }} className=" p-10" sx={{ borderRadius: 1, backgroundColor: transparentBlack }} elevation={4}>
+        <Slide>
+            <img src={BACKEND_BASE_URL + blog.image ?? "/kaba_image.jpg"} width={920} height={600} alt={"logo"} className="w-full" />
 
+        </Slide>
+        <Slide direction="right">
+            <div className="px-4 mt-4   ">
+                <div className="flex flex-col">
+                    <h1 className='text-bold text-[20px] mb-2 text-slate-100 pt-2 font-bold'>
+                        {blog.title}
+                    </h1>
+                    <Divider sx={{ backgroundColor: 'white' }} />
+                    {...blog.elements.map((e) => buildElement(e))}
+
+                    <Space h={10} />
+
+                </div>
             </div>
-        </div>
 
+        </Slide>
     </Card>)
 }

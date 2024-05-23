@@ -5,12 +5,12 @@ import { Slide } from 'react-awesome-reveal'
 
 const Features = () => {
   return (
-    <section className="flex-col flexCenter overflow-hidden bg-center bg-no-repeat py-24 rounded-3xl  mx-6 " style={{backgroundColor:transparentBlack}}>
+    <section id='aboutUs' className="flex-col flexCenter overflow-hidden bg-center bg-no-repeat py-10 rounded-3xl  mx-6 " style={{backgroundColor:transparentBlack}}>
       <div className="max-container padding-container relative w-full flex justify-end ">
         <div className="flex flex-1 ">
-          <Image
+          <img
           className='rounded-3xl h-[640px] mt-36'
-            src="/kaba3.jpg"
+            src="images/kaba1.jpg"
             alt="phone"
             width={430}
             height={1000}

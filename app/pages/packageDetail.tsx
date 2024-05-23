@@ -164,7 +164,7 @@ export default function PackageDetail() {
                 <div className="w-full  bg-black ">
                     <Card
                         className="w-full  "
-                        sx={{ backgroundColor: "whitesmoke", borderRadius: 2 }}
+                        sx={{ borderRadius: 2 ,backgroundColor:transparentBlack}}
                         elevation={4}
                     >
                         <Slide>
@@ -176,12 +176,12 @@ export default function PackageDetail() {
                                 className="w-full cursor-pointer"
                             />
                         </Slide>
-                        <div className=" grid grid-cols-6  bg-black p-2">
+                        <div className=" grid sm:grid-cols-6 grid-cols-2 px-3 bg-black p-2">
                             {" "}
                             {...buildComponents(packageToView)}
                         </div>
 
-                        <div className="pt-4 px-10 hover:cursor-pointer bg-black ">
+                        <div className="pt-4 sm:px-10 px-4 hover:cursor-pointer bg-black ">
                             <div className="flex flex-col text-white">
                                 <Slide>
                                     <h1 className="text-bold text-[36px] text-white pt-1 font-bold">
@@ -211,10 +211,10 @@ export default function PackageDetail() {
 
                                 {packageToView && packageToView.hotel_makkah_enabled && (
                                     <Slide>
-                                        <div className="flex flexBetween mt-10">
+                                        <div className="flex sm:flex-between sm:flex-row flex-col  mt-10">
                                             <div
                                                 style={{ height: "auto" }}
-                                                className="mx-5 p-4  flex    flex-col rounded-xl  w-full "
+                                                className="sm:mx-5 p-4  flex    flex-col rounded-xl  w-full "
                                             >
                                                 <span className="font-bold font-serif text-yellow-50 text-[14px]">
                                                     {"Hotel In Makkah"}
@@ -229,7 +229,7 @@ export default function PackageDetail() {
 
                                             {packageToView.hotel_makkah_image && (
                                                 <Image
-                                                    className="rounded-xl "
+                                                    className="rounded-xl"
                                                     src={
                                                         BACKEND_BASE_URL + packageToView.hotel_makkah_image ??
                                                         "" ??
@@ -245,7 +245,7 @@ export default function PackageDetail() {
                                 )}
                                 {packageToView && packageToView.hotel_madina_enabled && (
                                     <Slide direction="right">
-                                        <div className="flex flexBetween mt-10">
+                                        <div className="flex sm:flex-between sm:flex-row flex-col  mt-10">
                                             {packageToView.hotel_madina_image && (
                                                 <Image
                                                     className="rounded-xl"
@@ -262,7 +262,7 @@ export default function PackageDetail() {
 
                                             <div
                                                 style={{ height: "auto" }}
-                                                className="mx-5 p-4  flex   flex-col rounded-xl  w-full "
+                                                className="sm:mx-5 p-4  flex   flex-col rounded-xl  w-full "
                                             >
                                                 <span className="font-bold font-serif text-yellow-50 text-[14px]">
                                                     {"Hotel In Madinah"}
@@ -279,10 +279,10 @@ export default function PackageDetail() {
                                 )}
                                 {packageToView && packageToView.transport_enabled && (
                                     <Slide >
-                                        <div className="flex flexBetween mt-10">
+                                        <div className="flex sm:flex-between sm:flex-row flex-col  mt-10">
                                             <div
                                                 style={{ height: "auto" }}
-                                                className="mx-5 p-4  flex   flex-col rounded-xl  w-full "
+                                                className="sm:mx-5 p-4  flex   flex-col rounded-xl  w-full "
                                             >
                                                 <span className="font-bold font-serif text-yellow-50 text-[14px]">
                                                     {"Transportation In Saudi"}
@@ -313,7 +313,7 @@ export default function PackageDetail() {
 
                                 {packageToView && packageToView.visa_enabled && (
                                     <Slide direction="right">
-                                        <div className="flex flexBetween mt-10">
+                                        <div className="flex sm:flex-between sm:flex-row flex-col  mt-10">
                                             {packageToView.visa_image && (
                                                 <Image
                                                     className="rounded-xl"
@@ -330,7 +330,7 @@ export default function PackageDetail() {
 
                                             <div
                                                 style={{ height: "auto" }}
-                                                className="mx-5 p-4  flex   flex-col rounded-xl  w-full "
+                                                className="sm:mx-5 p-4  flex   flex-col rounded-xl  w-full "
                                             >
                                                 <span className="font-bold font-serif text-yellow-50 text-[14px]">
                                                     {"Visa Services"}
@@ -359,9 +359,9 @@ export default function PackageDetail() {
                                         onClick={() =>
                                             window.open("tel:+" + packageToView.whatsapp, "_blank")
                                         }
-                                        className="hover:bg-green-700 bg-green-600 cursor-pointer  hover:shadow-3xl p-3 rounded-full shadow-sm"
+                                        className="hover:bg-green-700 bg-green-600 cursor-pointer  hover:shadow-3xl  p-3 rounded-full shadow-sm"
                                     >
-                                        <Call style={{ color: "white" }} /> MAKE CALL
+                                        <Call style={{ color: "white" }} />
                                     </div>
                                     <div
                                         onClick={() =>
@@ -369,7 +369,7 @@ export default function PackageDetail() {
                                         }
                                         className=" bg-orange-500  hover:bg-orange-600 p-3 cursor-pointer rounded-full shadow-sm"
                                     >
-                                        <Email style={{ color: "white" }} /> EMAIL US
+                                        <Email style={{ color: "white" }} /> 
                                     </div>
                                     <div
                                         onClick={() =>
@@ -381,7 +381,7 @@ export default function PackageDetail() {
                                         }
                                         className="bg-white cursor-pointer hover:bg-slate-200  text-black p-3 rounded-full shadow-sm"
                                     >
-                                        <WhatsApp style={{ color: "black" }} /> WHATSAPP US
+                                        <WhatsApp style={{ color: "black" }} /> 
                                     </div>
                                 </div>
                             </Fade>

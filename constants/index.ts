@@ -1,8 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
-  { href: '/#packages', key: 'all_packages', label: 'All Umrah Packages' },
+  { href: '/packages', key: 'all_packages', label: 'Our All Packages' },
   { href: '/blogs', key: 'blogs', label: 'Blogs' },
+  { href: '/testimonials', key: 'testimonials', label: 'Testimonials' },
   { href: '/about', key: 'about', label: 'About Us' },
 ];
 
@@ -51,25 +52,27 @@ export const FOOTER_LINKS = [
   {
     title: 'Learn More',
     links: [
-      'About Marwah Travels',
-      'Press Releases',
-      'Environment',
-      'Jobs',
+      'About Us',
+      'Packages',
+    
+      'Testimonials',
       'Privacy Policy',
       'Contact Us',
     ],
   },
   {
     title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking Marwah Travels', 'Marwah Travels kinthill'],
+    links: [ 'Hiking Marwah Travels', 'Marwah Travels kinthill'],
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'Marwah Travels@akinthil.com' },
+    { label: 'Phone', value: '+16463599313' },
+    { label: 'WhatsApp', value: '+16463599313' },
+
+    { label: 'Email', value: 'info@marwahtravelsumrah.com' },
   ],
 };
 

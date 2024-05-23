@@ -21,11 +21,11 @@ const AboutUsSection = () => {
           <div >
 
             <Space h={120} />
-            <h1 className="font-bold text-[30px] lg:bold-12 mt-10 text-white">Welcome to Marwah Travels Umrah <br /> Your Offical Agent To Makkah and Madina</h1>
+            <h1 className="font-bold text-[30px]  mt-10 text-white">Welcome to Marwah Travels Umrah <br /> Your Offical Agent To Makkah and Madina</h1>
             <p className="regular-16 mt-3
- text-slate-200 xl:max-w-[520px]">
+ text-slate-200 xl:max-w-[520px] ">
               {
-                loremIpsum.substring(0, 100)
+                "Comintment over anything"
               } </p>
 {/* 
             <div className="my-11 flex flex-wrap gap-5">
@@ -58,7 +58,7 @@ const AboutUsSection = () => {
         <div  className="flex flex-col-reverse relative z-10 inset-0  bg-coverbg-center bg-red rounded-3xl
        xl:w-1/2  sm:w-full p-2 ">
    
-          <div className="z-20 xl:w-[500px] sm:w-full flexBetween justify-bottom flex-row flex   gap-8 rounded-3xl px-6 py-6 " style={{ backgroundColor: transparentBlack }}>
+          <div className="z-20 xl:w-[500px] sm:w-full flexBetween justify-bottom flex-row flex   gap-8 rounded-3xl px-6 py-6" style={{ backgroundColor: transparentBlack }}>
             <div className="flex flex-col gap-2">
               <p className="text-sm/[20px] xl:regular-16" style={{ color: lightWhite }}>
                 Satisfied Clients

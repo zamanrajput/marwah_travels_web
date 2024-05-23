@@ -14,10 +14,10 @@ const Footer = () => {
         <h1 className="text-orange-400  mx-4 font-bold text-[40px] w-full text-center">
           Award-Winning Excellence
         </h1>
-        <div className='flexBetween mx-40 mt-5 mb-40'>
-          <img width={130} height={50} className='mx-2' src='/awds/img1.webp' />
-          <img width={130} height={50} className='mx-2' src='/awds/img2.webp' />
-          <img width={130} height={50} className='mx-2' src='/awds/img3.webp' />
+        <div className='flexBetween sm:mx-40 mt-5 sm:mb-40 mb-10'>
+          <img  className='mx-2 w-24 h-28' src='/awds/img1.webp' />
+          <img className='mx-2 w-24 h-28' src='/awds/img2.webp' />
+          <img  className='mx-2 w-24 h-28' src='/awds/img3.webp' />
         </div>
 
 
@@ -63,7 +63,10 @@ const Footer = () => {
         </div>
 
         <div className="border" />
-        <p className="regular-14 w-full text-center text-slate-200">2024 Marwah Travels | All rights reserved</p>
+        <p className="regular-14 w-full text-center text-slate-200"> © 2024 MARWAH TRAVELS UMRAH SERVICES LLC.ALL RIGHTS RESERVED.</p>
+        <p className="regular-14 w-full text-center text-slate-200 mb-10"> 15636 71ST AVE 28B
+FLUSHING , NEW YORK ,11367</p>
+        
       </div>
     </footer>
   )

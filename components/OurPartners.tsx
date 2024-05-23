@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 
 export default function OurPartners() {
-    return (<div className="mt-10  bg-white shadow-sm shadow-white py-40">
+    return (<div className="mt-10  bg-white shadow-sm shadow-white py-10">
         <h1 className="text-black mx-4 font-bold text-[40px] mb-10 w-full text-center">
             Our Partners
         </h1>

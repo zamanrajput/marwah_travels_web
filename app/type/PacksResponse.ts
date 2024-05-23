@@ -1,4 +1,4 @@
-import { Category } from "./UmrahPackage";
+import Category from "./Category";
 
 interface PacksResponse extends Array<Category> {}
 

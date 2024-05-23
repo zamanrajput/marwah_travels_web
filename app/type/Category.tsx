@@ -1,6 +1,9 @@
+import { UmrahPackage } from "./UmrahPackage";
+
 export default class Category {
     id: number;
     status: string;
+    list?:UmrahPackage[];
     name: string;
     created_at: Date;
     updated_at: Date;

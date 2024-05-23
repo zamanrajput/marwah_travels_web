@@ -14,6 +14,9 @@ import BlogDetail from './pages/blogDetail';
 import PackageDetail from './pages/packageDetail';
 import Login from './admin/login';
 import Dashboard from './admin/dashboard';
+import TestimonialsPage from './pages/testimonials';
+import PackagesPage from './pages/packages';
+import AboutUsPage from './pages/aboutUs';
 
 
 function getUserFrame(child: any) {
@@ -47,6 +50,11 @@ export default function RootLayout() {
           <Route path="/blogs" element={getUserFrame(<Blogs />)} />
           <Route path="/blogDetail" element={getUserFrame(<BlogDetail />)} />
           <Route path="/packageDetail" element={getUserFrame(<PackageDetail />)} />
+          <Route path="/testimonials" element={getUserFrame(<TestimonialsPage />)} />
+          <Route path="/packages" element={getUserFrame(<PackagesPage/>)} />
+          <Route path="/about" element={getUserFrame(<AboutUsPage/>)} />
+
+
 
           <Route path="/dashboard" element = {<Login/>}/>
           <Route path="/dashboard/home" element = {<Dashboard/>}/>
