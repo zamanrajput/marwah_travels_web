@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import FloatingComponents from '@/components/FloatingComponents';
 import Space from '@/components/Space';
 
-import { BrowserRouter, Route, Routes, } from 'react-router-dom';
+// import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import Home from './page';
 import Blogs from './pages/blogs';
 import BlogDetail from './pages/blogDetail';
@@ -42,7 +42,7 @@ export default function RootLayout() {
 
   return (
     <html lang="en">
-      
+{/*       
       <BrowserRouter>
         <Routes>
 
@@ -63,7 +63,7 @@ export default function RootLayout() {
             getUserFrame(<div className='flex text-white text-[20px] h-[600px] flexCenter text-center content-center '>404 Page Not Found</div>)
           } />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
     </html>
   )
