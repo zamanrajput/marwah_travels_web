@@ -772,8 +772,8 @@ const CustomPackageForm = () => {
                   ref={(ref: any) => {
                     setPad(ref);
                   }}
-                  backgroundColor={"white"}
-                  penColor="black"
+                
+            
                   canvasProps={{
                     className: "sigCanvas w-full h-72 bg-white rounded-xl",
                   }}
