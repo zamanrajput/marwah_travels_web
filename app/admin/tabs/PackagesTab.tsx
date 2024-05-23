@@ -69,7 +69,7 @@ export function BasicTable() {
     setPacks(packsResponse);
 
     console.log(packsResponse);
-    setSelectedCategory(packsResponse[0].id);
+    setSelectedCategory(packsResponse[0].id.toString());
   }
 
   const [packs, setPacks] = useState<PacksResponse>();
