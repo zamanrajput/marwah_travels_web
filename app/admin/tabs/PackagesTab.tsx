@@ -566,7 +566,7 @@ export default function PackagesTab() {
   return (
     <div
       className="w-full flex flex-col bg-gray-100 overflow-auto "
-      style={{ height: window.innerHeight }}
+      style={{ height: "800px" }}
     >
         <h1 className="font-bold text-black text-3xl px-5 bg-yellow-50 py-5 ">Packages</h1>
 

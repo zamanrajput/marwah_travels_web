@@ -94,7 +94,7 @@ export function CustomPackagesTab() {
   return (
     <div
       className="w-full flex flex-col bg-gray-100 overflow-auto"
-      style={{ height: window.innerHeight }}
+      style={{ height: "800px" }}
     >
 
 
@@ -200,7 +200,7 @@ export function CustomPackagesTab() {
                 <div className="w-full flex flex-col ">
                   <span className="w-52 font-bold">E-Signature</span>
 
-                  <Image
+                  <img
                     alt="CustomPackage image"
                     className=" w-full rounded-xl"
                     src={BACKEND_BASE_URL + pack.signature_image_url ?? "/kaba_image.jpg"}

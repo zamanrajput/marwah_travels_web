@@ -9,8 +9,9 @@ import { BACKEND_BASE_URL, GET_PACKAGES } from "@/app/db/Routes";
 import { ApiCallProps as ApiCallProps, makeGetCall, makePostCall } from "@/app/db/api";
 import PacksResponse from "@/app/type/PacksResponse";
 import { UmrahPackage } from "@/app/type/UmrahPackage";
-import { Link } from "react-router-dom";
+
 import { selectUmrahPackage, store } from "@/app/state/store";
+import Link from "next/link";
 
 
 
@@ -168,14 +169,14 @@ export default function PackagesSection() {
                         {cat?.list?.map((pack: UmrahPackage, i: any) =>
                             <Grid key={i} item sm={2.2}>
                                 
-                                <Link to="/packageDetail">
+                                <Link href="/pages/package_detail">
                                     <Card
                                      onClick={() => {
                                         store.dispatch(selectUmrahPackage(pack));
                                       }}
 
                                     className="hover:border-white hover:border-2 hover:shadow-white hover:shadow-xl" sx={{ backgroundColor: 'white', borderRadius: 2 }} elevation={4}>
-                                        <Image src={BACKEND_BASE_URL + pack.package_image ?? "/kaba_image.jpg"} width={720} height={300} alt={"logo"} className="w-full h-36" />
+                                        <img src={BACKEND_BASE_URL + pack.package_image ?? "/kaba_image.jpg"} width={720} height={300} alt={"logo"} className="w-full h-36" />
 
                                         <div className="p-4 hover:cursor-pointer ">
                                             <div className="flex flex-col">

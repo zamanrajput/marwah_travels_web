@@ -12,7 +12,7 @@ const AboutUsSection = () => {
     <div  >
       <Navbar />
 
-      <section  style={{height:window.innerHeight-100}} className="max-container padding-container flex flex-col  pb-10 md:gap-10 lg:py-10 xl:flex-row">
+      <section  style={{height:"800px"-100}} className="max-container padding-container flex flex-col  pb-10 md:gap-10 lg:py-10 xl:flex-row">
 
 
 
@@ -31,7 +31,7 @@ const AboutUsSection = () => {
             <div className="my-11 flex flex-wrap gap-5">
               <div className="flex items-center gap-2">
                 {Array(5).fill(1).map((_, index) => (
-                  <Image
+                  <img
                     src="/star.svg"
                     key={index}
                     alt="star"

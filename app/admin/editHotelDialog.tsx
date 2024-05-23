@@ -112,10 +112,10 @@ function EditHotelDialog({
                         } items-center w-full h-auto min-h-[300px] my-2 mt-10 rounded-xl shadow-sm bg-gray-100  shadow-2px shadow-gray-500 `}
                 >
                     {hotelData.image ? (
-                        <Image
+                        <img
                             className="flex-1 w-auto h-auto  "
                             width={window.innerWidth}
-                            height={window.innerHeight / 1.2}
+                            height={"700px" }
                             alt="main"
                             src={getImageUrl(hotelData.image)}
                         />

@@ -139,11 +139,11 @@ function EditPackageDialog({
                         } items-center w-full h-auto min-h-[300px] my-2 mt-10 rounded-xl shadow-sm bg-gray-100  shadow-2px shadow-gray-500 `}
                 >
                     {packageData.package_image ? (
-                        <Image
+                        <img
                             className="flex-1 w-auto h-auto  "
                             width={window.innerWidth}
-                            height={window.innerHeight / 1.2}
-                            alt="main"
+                            height={"700px"}
+                           
                             src={getImageUrl(packageData.package_image)}
                         />
                     ) : (
@@ -523,10 +523,10 @@ function EditPackageDialog({
                                     >
                                         {packageData.hotel_makkah_image ? (
                                             <div className="flex flex-row gap-2 mt-2">
-                                                <Image
+                                                <img
                                                     className="flex-1 w-[100px] h-auto  "
                                                     width={window.innerWidth}
-                                                    height={window.innerHeight / 1.2}
+                                                    height={"700px" }
                                                     alt="main"
                                                     src={getImageUrl(packageData.hotel_makkah_image)}
                                                 />
@@ -622,10 +622,10 @@ function EditPackageDialog({
                                     >
                                         {packageData.hotel_madina_image ? (
                                             <div className="flex flex-row gap-2 mt-2">
-                                                <Image
+                                                <img
                                                     className="flex-1 w-[100px] h-auto  "
                                                     width={window.innerWidth}
-                                                    height={window.innerHeight / 1.2}
+                                                    height={"700px" }
                                                     alt="main"
                                                     src={getImageUrl(packageData.hotel_madina_image)}
                                                 />
@@ -720,10 +720,10 @@ function EditPackageDialog({
                                     >
                                         {packageData.visa_image ? (
                                             <div className="flex flex-row gap-2 mt-2">
-                                                <Image
+                                                <img
                                                     className="flex-1 w-[100px] h-auto  "
                                                     width={window.innerWidth}
-                                                    height={window.innerHeight / 1.2}
+                                                    height={"700px" }
                                                     alt="main"
                                                     src={getImageUrl(packageData.visa_image)}
                                                 />
@@ -819,10 +819,10 @@ function EditPackageDialog({
                                     >
                                         {packageData.trans_image ? (
                                             <div className="flex flex-row gap-2 mt-2">
-                                                <Image
+                                                <img
                                                     className="flex-1 w-[100px] h-auto  "
                                                     width={window.innerWidth}
-                                                    height={window.innerHeight / 1.2}
+                                                    height={"700px" }
                                                     alt="main"
                                                     src={getImageUrl(packageData.trans_image)}
                                                 />

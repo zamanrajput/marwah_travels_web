@@ -278,10 +278,10 @@ function EditBlogDialog({
                                 } items-center w-1/2  h-auto min-h-[300px] my-2 mt-10 rounded-xl shadow-sm bg-gray-100  shadow-2px shadow-gray-500 `}
                         >
                             {blogData.image ? (
-                                <Image
+                                <img
                                     className="flex-1 w-auto h-auto  "
                                     width={window.innerWidth}
-                                    height={window.innerHeight / 1.2}
+                                    height={"700px" }
                                     alt="main"
                                     src={getImageUrl(blogData.image)}
                                 />
@@ -427,7 +427,7 @@ function EditBlogDialog({
                     <h1 className="font-bold mt-2">Body Preview</h1>
                     <div className="rounded-md p-2 border-[2px] border-gray-300  min-h-[100px] h-auto">
                         {blogData.image && (
-                            <Image
+                            <img
                                 alt="Blog Image"
                                 src={getImageUrl(blogData.image)}
                                 width={1024}

@@ -1,3 +1,4 @@
+'use client'
 import { transparentBlack } from "@/constants";
 import {
     HotelOutlined,
@@ -14,16 +15,17 @@ import {
     Link,
     WhatsApp,
 } from "@mui/icons-material";
-import { UmrahPackage } from "../type/UmrahPackage";
+import { UmrahPackage } from "../../type/UmrahPackage";
 import { useState, useEffect } from "react";
-import { BACKEND_BASE_URL, GET_PACKAGES } from "../db/Routes";
-import { ApiCallProps, makeGetCall } from "../db/api";
-import PacksResponse from "../type/PacksResponse";
+import { BACKEND_BASE_URL, GET_PACKAGES } from "../../db/Routes";
+import { ApiCallProps, makeGetCall } from "../../db/api";
+import PacksResponse from "../../type/PacksResponse";
 import Space from "@/components/Space";
 import { Grid, Card, Divider } from "@mui/material";
 import Image from "next/image";
 import { Fade, Slide } from "react-awesome-reveal";
-import { store } from "../state/store";
+import { store } from "../../state/store";
+import { getUserFrame } from "@/app/layout";
 
 export default function PackageDetail() {
     function buildComponents(p: UmrahPackage) {
@@ -119,7 +121,7 @@ export default function PackageDetail() {
 
 
 
-    return (
+    return getUserFrame(
         <div className="w-full flex text-white">
              <div className="w-full  bg-black ">
                     <Card
@@ -128,7 +130,7 @@ export default function PackageDetail() {
                         elevation={4}
                     >
                         <Slide>
-                            <Image
+                            <img
                                 src={BACKEND_BASE_URL + (packageToView.package_image ?? "")}
                                 width={720}
                                 height={300}
@@ -188,7 +190,7 @@ export default function PackageDetail() {
                                             </div>
 
                                             {packageToView.hotel_makkah_image && (
-                                                <Image
+                                                <img
                                                     className="rounded-xl"
                                                     src={
                                                         BACKEND_BASE_URL + packageToView.hotel_makkah_image ??
@@ -207,7 +209,7 @@ export default function PackageDetail() {
                                     <Slide direction="right">
                                         <div className="flex sm:flex-between sm:flex-row flex-col  mt-10">
                                             {packageToView.hotel_madina_image && (
-                                                <Image
+                                                <img
                                                     className="rounded-xl"
                                                     src={
                                                         BACKEND_BASE_URL + packageToView.hotel_madina_image ??
@@ -255,7 +257,7 @@ export default function PackageDetail() {
                                                 </span>
                                             </div>
                                             {packageToView.trans_image && (
-                                                <Image
+                                                <img
                                                     className="rounded-xl"
                                                     src={
                                                         BACKEND_BASE_URL + packageToView.trans_image ??
@@ -275,7 +277,7 @@ export default function PackageDetail() {
                                     <Slide direction="right">
                                         <div className="flex sm:flex-between sm:flex-row flex-col  mt-10">
                                             {packageToView.visa_image && (
-                                                <Image
+                                                <img
                                                     className="rounded-xl"
                                                     src={
                                                         BACKEND_BASE_URL + packageToView.visa_image ??

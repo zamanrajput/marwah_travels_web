@@ -3,6 +3,8 @@ import { ApiCallProps, createBlog, makeGetCall, updateBlogCloud } from "@/app/db
 import { Blog } from "@/app/type/Blog";
 import BlogElement from "@/app/type/BlogElement";
 import ReactPlayer from 'react-player'
+import '../../../app/globals.css'
+
 import { Email, NoAdultContent, Phone, PlayArrow, Smartphone } from "@mui/icons-material";
 import {
   Button,
@@ -193,7 +195,7 @@ export function ReviewsTab() {
   return (
     <div
       className="w-full flex flex-col bg-gray-100 overflow-auto"
-      style={{ height: window.innerHeight }}
+      style={{ height: "800px" }}
     >
       <input
         className="w-full h-[200px] hidden"
@@ -289,9 +291,9 @@ export function ReviewsTab() {
                 <h1 className="w-full mb-3 text-center text-[15px] text-black mt-2">
                   {inquiry.detail}
                 </h1>
-                <Button onClick={()=>deleteBlog(inquiry)} variant="contained" sx={{borderRadius:10,paddingX:10,marginBottom:2}} color="error">
+                <div className="rounded-full px-10 w-full text-center text-white mx-5  py-2 bg-red-600" onClick={()=>deleteBlog(inquiry)}>
                   Delete
-                </Button>
+                </div>
 
               </Card>
             </Grid>

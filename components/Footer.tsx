@@ -23,7 +23,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
           <Link href="/">
-            <Image src="/logo2.png" alt="logo" width={200} height={19} />
+            <img src="/logo2.png" alt="logo" width={200} height={19} />
             {/* <span className="mt-10 text-white text-3xl font-bold">Marwah Travels</span> */}
           </Link>
 

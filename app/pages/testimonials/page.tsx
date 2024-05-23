@@ -1,5 +1,7 @@
+'use client'
 import { BACKEND_BASE_URL, GET_REVIEWS } from "@/app/db/Routes";
 import { ApiCallProps, makeGetCall } from "@/app/db/api";
+import { getUserFrame } from "@/app/layout";
 import { Review } from "@/app/type/Review";
 import { Star } from "@mui/icons-material";
 import { Grid } from "@mui/material";
@@ -33,7 +35,7 @@ export default function TestimonialsPage() {
 
     useEffect(loadReviews, []);
 
-    return (
+    return getUserFrame(
         <div className="mt-10  shadow-sm shadow-white py-10">
             <h1 className="text-white  font-bold text-[30px] mb-10 w-full text-center ">
                 Our Testimonials

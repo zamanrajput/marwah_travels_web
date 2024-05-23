@@ -5,14 +5,11 @@ import Space from './Space'
 import { lightWhite, loremIpsum, transparentBlack } from '@/constants'
 import { NumberTransition } from './NumberTransition'
 import { Slide } from 'react-awesome-reveal'
-import Navbar from './Navbar'
-import OurPartners from './OurPartners'
-
 const Hero = () => {
   return (
     <div>
 
-      <section style={{ height: window.innerHeight - 100 }} className="max-container padding-container sm:flex pb-4 md:gap-10 lg:py-10 xl:flex-row">
+      <section style={{ height: "600px"  }} className="max-container padding-container sm:flex pb-4 md:gap-10 lg:py-10 xl:flex-row">
 
 
 

@@ -5,12 +5,12 @@ import { Slide } from 'react-awesome-reveal'
 
 const Features = () => {
   return (
-    <section id='aboutUs' className="flex-col flexCenter overflow-hidden bg-center bg-no-repeat py-10 rounded-3xl  mx-6 " style={{backgroundColor:transparentBlack}}>
-      <div className="max-container padding-container relative w-full flex justify-end ">
+    <section id='aboutUs' className="flex-col mt-10 flexCenter overflow-hidden bg-center bg-no-repeat py-10 rounded-3xl  mx-6 " style={{backgroundColor:transparentBlack}}>
+      <div className="max-container  padding-container relative w-full flex justify-end ">
         <div className="flex flex-1 ">
           <img
           className='rounded-3xl h-[640px] mt-36'
-            src="images/kaba1.jpg"
+            src="/images/kaba1.jpg"
             alt="phone"
             width={430}
             height={1000}
@@ -49,7 +49,7 @@ const FeatureItem = ({ title, icon, description }: FeatureItem) => {
   return (
     <li className="flex w-full flex-1 flex-col items-start">
       <div className="rounded-full p-4 lg:p-7 bg-green-50">
-        <Image src={icon} alt="map" width={28} height={28} />
+        <img src={icon} alt="map" width={28} height={28} />
       </div>
       <h2 className="bold-20 lg:bold-32 mt-5 text-white capitalize">
         {title}

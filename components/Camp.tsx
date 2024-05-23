@@ -15,7 +15,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps)
       <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
         <div className="flexCenter gap-4">
           <div className="rounded-full bg-green-50 p-4">
-            <Image
+            <img
               src="/folded-map.svg"
               alt="map"
               width={28}
@@ -31,7 +31,7 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps)
         <div className="flexCenter gap-6">
           <span className="flex -space-x-4 overflow-hidden">
             {PEOPLE_URL.map((url) => (
-              <Image
+              <img
                 className="inline-block h-10 w-10 rounded-full"
                 src={url}
                 key={url}
@@ -76,7 +76,7 @@ const Camp = () => {
             <p className="regular-14 xl:regular-16 mt-5 text-white">
               Comintment over anything
             </p>
-            <Image
+            <img
               src="/quote.svg"
               alt="camp-2"
               width={186}

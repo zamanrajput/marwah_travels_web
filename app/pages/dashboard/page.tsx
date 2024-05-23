@@ -1,16 +1,18 @@
+'use client'
 import React, { useState } from 'react';
-import { Tabs, Tab, Box, Typography, Container } from '@mui/material';
+import { Tabs, Tab, Box, Typography } from '@mui/material';
 import { IconBlob, IconMailQuestion, IconPackage, IconQuestionMark, IconUsb, IconUser, IconUserCircle } from '@tabler/icons-react';
 import { Category, DocumentScanner, HotelSharp, MedicalInformation, PostAdd } from '@mui/icons-material';
-import PackagesTab from './tabs/PackagesTab';
-import CategoriesTab from './tabs/CategoriesTab';
-import { InquiriesTab } from './tabs/InquiriesTab';
-import { BlogsTab } from './tabs/BlogsTab';
-import HotelsTab from './tabs/HotelsTab';
-import { CustomPackagesTab } from './tabs/CustomPackagesTab';
-import { ReviewsTab } from './tabs/ReviewsTab';
+import PackagesTab from '../../admin/tabs/PackagesTab';
+import CategoriesTab from '../../admin/tabs/CategoriesTab';
+import { InquiriesTab } from '../../admin/tabs/InquiriesTab';
+import { BlogsTab } from '../../admin/tabs/BlogsTab';
+import HotelsTab from '../../admin/tabs/HotelsTab';
+import { CustomPackagesTab } from '../../admin/tabs/CustomPackagesTab';
+import { ReviewsTab } from '../../admin/tabs/ReviewsTab';
+import { getAdminFrame, getUserFrame } from '@/app/layout';
 
-const Dashboard: React.FC = () => {
+const index: React.FC = () => {
     const [value, setValue] = useState(6);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -89,7 +91,7 @@ const Dashboard: React.FC = () => {
     ]
 
 
-    return (
+    return getUserFrame(
         <div style={{ display: 'flex' }} >
             <Tabs
 
@@ -98,7 +100,7 @@ const Dashboard: React.FC = () => {
                 onChange={handleChange}
                 className='flex-1/2 shadow-xl'
 
-                style={{ borderRight: '1px solid #e0e0e0', backgroundColor: 'black', height: window.innerHeight }}
+                style={{ borderRight: '1px solid #e0e0e0', backgroundColor: 'black', height: "800px" }}
             >
 
                 <div className='w-64 h-72 flex items-center flex-center flex-col'>
@@ -140,4 +142,4 @@ export const TabPanel: React.FC<TabPanelProps> = ({ children, value, index }) =>
     );
 };
 
-export default Dashboard;
+export default index;

@@ -268,7 +268,7 @@ export function BlogsTab() {
   return (
     <div
       className="w-full flex flex-col bg-gray-100 overflow-auto"
-      style={{ height: window.innerHeight }}
+      style={{ height: "800px" }}
     >
       <input
         className="w-full h-[200px] hidden"
@@ -338,7 +338,7 @@ export function BlogsTab() {
                   {inquiry.created_at.replace('T', ' ').split('.')[0]}
                 </h1>
 
-                <Image alt="blog image" className="h-48" src={BACKEND_BASE_URL + inquiry.image ?? "/kaba_image.jpg"} width={200} height={300} />
+                <img alt="blog image" className="h-48" src={BACKEND_BASE_URL + inquiry.image ?? "/kaba_image.jpg"} width={200} height={300} />
 
 
                 <h1 className="w-full text-center text-[13px] font-bold text-black mt-2">

@@ -1,15 +1,19 @@
+'use client'
+
+import { GET_BLOGS, BACKEND_BASE_URL } from "@/app/db/Routes";
+import { ApiCallProps, makeGetCall } from "@/app/db/api";
+import { getUserFrame } from "@/app/layout";
+import { store, selectBlog } from "@/app/state/store";
+import { Blog } from "@/app/type/Blog";
+import BlogElement from "@/app/type/BlogElement";
 import Space from "@/components/Space";
+import { transparentBlack } from "@/constants";
 
 import { Button, Card, CircularProgress, Divider, Grid } from "@mui/material";
 import Image from "next/image";
-import { Blog } from "../type/Blog";
-import { useEffect, useState } from "react";
-import { ApiCallProps, makeGetCall } from "../db/api";
-import { BACKEND_BASE_URL, GET_BLOGS } from "../db/Routes";
-import { selectBlog, store } from "../state/store";
-import { Link } from "react-router-dom";
-import { transparentBlack } from "@/constants";
-import BlogElement from "../type/BlogElement";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+
 export default function Blogs() {
   const [blogs, setBlogs] = useState<Array<Blog>>();
   const [loading, setLoading] = useState(true);
@@ -81,7 +85,7 @@ export default function Blogs() {
 
     return res;
   }
-  return (
+  return getUserFrame(
     <div className="w-full sm:m-6 p-6  flex flex-col items-center  ">
       {loading ? (
         <div>
@@ -100,7 +104,7 @@ export default function Blogs() {
         <Grid container gap={1}>
           {blogs?.map((blog, id) => (
             <Grid key={id} item marginTop={1} sm={2.7}>
-              <Link to={"/blogDetail"}>
+              <Link href="/pages/blog_detail">
                 <Card
                   onClick={() => {
                     store.dispatch(selectBlog(blog));
@@ -109,7 +113,7 @@ export default function Blogs() {
                   sx={{ borderRadius: 1, backgroundColor: transparentBlack }}
                   elevation={4}
                 >
-                  <Image
+                  <img
                     src={BACKEND_BASE_URL + blog.image ?? "/kaba_image.jpg"}
                     width={720}
                     height={500}

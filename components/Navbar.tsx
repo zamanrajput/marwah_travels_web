@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className=" flex sm:items-center sm:flex-row flex-col sm:gap-20 gap-5 bg-black/30 max-container padding-container relative z-30 py-5">
       <Link href="/">
-        <Image src="/logo2.png" alt="logo" width={200} height={19} />
+        <img src="/logo2.png" alt="logo" width={200} height={19} />
         {/* <span className="text-white text-3xl font-bold">Marwah Travels</span> */}
       </Link>
 
@@ -26,14 +26,14 @@ const Navbar = () => {
         <ul className="regular-14 flex gap-4 text-white me-16">
           {SOCIALS.links.map((link) => (
             <Link href="/" key={link}>
-              <Image color="white" src={link} alt="logo" width={24} height={24} />
+              <img color="white" src={link} alt="logo" width={24} height={24} />
             </Link>
           ))}
         </ul>
 
       </div> */}
 
-      {/* <Image
+      {/* <img
         src="menu.svg"
         alt="menu"
         width={32}

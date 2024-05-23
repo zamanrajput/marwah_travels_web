@@ -10,6 +10,7 @@ import OurTestimonials from "@/components/OurTestimonials";
 import PackagesSection from "@/components/PackagesSection";
 import {  Dialog } from "@mui/material";
 import { useEffect, useState } from "react";
+import { getUserFrame } from "./layout";
 
 export default function Home() {
 
@@ -27,7 +28,7 @@ export default function Home() {
   }
 
   useEffect(()=>{startTimer()},[]);
-  return (
+  return getUserFrame(
     <div >
 
       <Hero />

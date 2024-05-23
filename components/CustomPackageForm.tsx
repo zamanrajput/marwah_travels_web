@@ -29,7 +29,7 @@ import { loremIpsum, transparentBlack } from "@/constants";
 import { ApiCallProps, makeGetCall, submitCustomPackage } from "@/app/db/api";
 import { BACKEND_BASE_URL, GET_HOTELS } from "@/app/db/Routes";
 import { Hotel } from "@/app/type/Hotel";
-import { TabPanel } from "@/app/admin/dashboard";
+import { TabPanel } from "@/app/pages/dashboard/page";
 import Marquee from "react-fast-marquee";
 import SignatureCanvas from "react-signature-canvas";
 import CustomPackage from "@/app/type/CustomPackage";

@@ -1,11 +1,13 @@
+'use client'
+
 import Space from "@/components/Space";
 import { transparentBlack } from "@/constants";
 import { Card, Divider } from "@mui/material";
-import { store, selectBlog } from "../state/store";
-import Image from "next/image";
-import BlogElement from "../type/BlogElement";
-import { BACKEND_BASE_URL } from "../db/Routes";
+import { store, selectBlog } from "../../state/store";
+import BlogElement from "../../type/BlogElement";
+import { BACKEND_BASE_URL } from "../../db/Routes";
 import { Slide } from "react-awesome-reveal";
+import { getUserFrame } from "@/app/layout";
 
 export default function BlogDetail() {
 
@@ -42,7 +44,7 @@ export default function BlogDetail() {
         return <Slide>{res}</Slide>;
     }
 
-    return (<Card onClick={() => {
+    return getUserFrame(<Card onClick={() => {
 
 
     }} className=" p-10" sx={{ borderRadius: 1, backgroundColor: transparentBlack }} elevation={4}>

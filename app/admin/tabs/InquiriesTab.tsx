@@ -140,7 +140,7 @@ export function InquiriesTab() {
   return (
     <div
       className="w-full flex flex-col bg-gray-100 overflow-auto"
-      style={{ height: window.innerHeight }}
+      style={{ height: "800px" }}
     >
       <Toaster position="bottom-center" />
 
