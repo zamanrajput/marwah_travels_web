@@ -15,7 +15,7 @@ module.exports = {
     compiler:{
         styledComponents:true
     },
-    images: {     formats: ['image/avif', 'image/webp'],     domains: ['localhost','images.pexels.com','api.time.com','static.vecteezy.com','cdn.pixabay.com','192.168.0.108'],   },
+    images: {   unoptimized:true,  formats: ['image/avif', 'image/webp'],     domains: ['localhost','images.pexels.com','api.time.com','static.vecteezy.com','cdn.pixabay.com','192.168.0.108'],   },
     webpack5: true,
     webpack: (config) => {
         config.resolve.fallback = { fs: false };

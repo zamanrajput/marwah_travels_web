@@ -10,6 +10,7 @@ import { ApiCallProps as ApiCallProps, makeGetCall, makePostCall } from "@/app/d
 import PacksResponse from "@/app/type/PacksResponse";
 import { UmrahPackage } from "@/app/type/UmrahPackage";
 import { Link } from "react-router-dom";
+import { selectUmrahPackage, store } from "@/app/state/store";
 
 
 
@@ -49,7 +50,7 @@ function buildComponents(p: UmrahPackage) {
             </div>
         )
     }
- 
+
     if (p.breakfast_enabled) {
         arr.push(
             <div className="flex flex-center my-1 items-center">
@@ -105,21 +106,21 @@ const a = [1, 2, 3]
 export default function PackagesSection() {
 
 
-     function parseData(data: any) {
-    const packsResponse: PacksResponse = data.map((category: any) => ({
-      id: category.id,
-      name: category.name,
-      status: category.status,
-      created_at: category.created_at,
-      updated_at: category.updated_at,
-      list: category.list.map((pack: any) => UmrahPackage.fromJson(pack)),
-    }));
+    function parseData(data: any) {
+        const packsResponse: PacksResponse = data.map((category: any) => ({
+            id: category.id,
+            name: category.name,
+            status: category.status,
+            created_at: category.created_at,
+            updated_at: category.updated_at,
+            list: category.list.map((pack: any) => UmrahPackage.fromJson(pack)),
+        }));
 
-    setPacks(packsResponse);
+        setPacks(packsResponse);
 
-    console.log(packsResponse);
-   
-  }
+        console.log(packsResponse);
+
+    }
     const [packs, setPacks] = useState<PacksResponse>();
     const [loading, setLoading] = useState(true);
 
@@ -155,52 +156,61 @@ export default function PackagesSection() {
                 <CircularProgress size={90} sx={{ color: "white", borderRadius: 20, borderWidth: 3, padding: 1 }} className="mt-48" />
 
             </div> : <div className="w-full  flex flex-col items-center">
-                {packs?.map((cat, id) => <div className="w-full  flex flex-col items-center" key={id}>
+                {packs?.map((cat, id) => <div
+
+                    onClick={() => { }}
+                    className="w-full  flex flex-col items-center" key={id}>
                     <h1 className='bold-54 text-white pt-10 text-center font-bold text-3xl '>
                         {cat.name}
                     </h1>
 
-                    <Grid className="my-10" justifyContent={'center'}  container gap={4}>
-                        {cat.list.map((pack:UmrahPackage, i:any) =>
+                    <Grid className="my-10" justifyContent={'center'} container gap={4}>
+                        {cat?.list?.map((pack: UmrahPackage, i: any) =>
                             <Grid key={i} item sm={2.2}>
+                                
                                 <Link to="/packageDetail">
-                                <Card  className="hover:border-white hover:border-2 hover:shadow-white hover:shadow-xl" sx={{ backgroundColor: 'white', borderRadius: 2 }} elevation={4}>
-                                    <Image src={BACKEND_BASE_URL+pack.package_image?? "/kaba_image.jpg"} width={720} height={300} alt={"logo"} className="w-full h-36" />
+                                    <Card
+                                     onClick={() => {
+                                        store.dispatch(selectUmrahPackage(pack));
+                                      }}
 
-                                    <div className="p-4 hover:cursor-pointer ">
-                                        <div className="flex flex-col">
-                                            <h1 className='text-bold text-[16px] text-black pt-2 font-bold'>
-                                                {pack.name}
-                                            </h1>
-                                            <span className="mt-1">
-                                                <strong className="text-green-600 text-xl">{pack.currency + pack.price_single}/-</strong> Per Person
-                                            </span>
+                                    className="hover:border-white hover:border-2 hover:shadow-white hover:shadow-xl" sx={{ backgroundColor: 'white', borderRadius: 2 }} elevation={4}>
+                                        <Image src={BACKEND_BASE_URL + pack.package_image ?? "/kaba_image.jpg"} width={720} height={300} alt={"logo"} className="w-full h-36" />
 
-                                            <Divider />
-                                            <Space h={10} />
+                                        <div className="p-4 hover:cursor-pointer ">
+                                            <div className="flex flex-col">
+                                                <h1 className='text-bold text-[16px] text-black pt-2 font-bold'>
+                                                    {pack.name}
+                                                </h1>
+                                                <span className="mt-1">
+                                                    <strong className="text-green-600 text-xl">{pack.currency + pack.price_single}/-</strong> Per Person
+                                                </span>
 
-                                            {...buildComponents(pack)}
-                                            <Space h={20} />
+                                                <Divider />
+                                                <Space h={10} />
 
-                                            <div className="flexBetween mx-2">
-                                                <div onClick={()=>window.open("tel:+"+pack.whatsapp,"_blank")} className="hover:bg-green-700 bg-green-600 cursor-pointer  hover:shadow-3xl p-3 rounded-full shadow-sm">
-                                                    <Call style={{ color: 'white' }} />
+                                                {...buildComponents(pack)}
+                                                <Space h={20} />
+
+                                                <div className="flexBetween mx-2">
+                                                    <div onClick={() => window.open("tel:+" + pack.whatsapp, "_blank")} className="hover:bg-green-700 bg-green-600 cursor-pointer  hover:shadow-3xl p-3 rounded-full shadow-sm">
+                                                        <Call style={{ color: 'white' }} />
+                                                    </div>
+                                                    <div onClick={() => window.open("mailto:" + pack.email, "_blank")} className=" bg-orange-500  hover:bg-orange-600 p-3 cursor-pointer rounded-full shadow-sm">
+                                                        <Email style={{ color: 'white' }} />
+                                                    </div>
+                                                    <div onClick={() => window.open("https://api.whatsapp.com/send?phone=" + pack.whatsapp, "_blank")} className="bg-gray-700 cursor-pointer hover:bg-black  p-3 rounded-full shadow-sm">
+                                                        <WhatsApp style={{ color: 'white' }} />
+                                                    </div>
                                                 </div>
-                                                <div onClick={()=>window.open("mailto:"+pack.email,"_blank")} className=" bg-orange-500  hover:bg-orange-600 p-3 cursor-pointer rounded-full shadow-sm">
-                                                    <Email style={{ color: 'white' }} />
-                                                </div>
-                                                <div onClick={()=>window.open("https://api.whatsapp.com/send?phone="+pack.whatsapp,"_blank")}  className="bg-gray-700 cursor-pointer hover:bg-black  p-3 rounded-full shadow-sm">
-                                                    <WhatsApp style={{ color: 'white' }} />
-                                                </div>
+
+                                                <Space h={10} />
+
+
                                             </div>
-
-                                            <Space h={10} />
-
-
                                         </div>
-                                    </div>
 
-                                </Card>
+                                    </Card>
                                 </Link>
                             </Grid>
                         )}

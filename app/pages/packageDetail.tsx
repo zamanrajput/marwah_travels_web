@@ -22,8 +22,8 @@ import PacksResponse from "../type/PacksResponse";
 import Space from "@/components/Space";
 import { Grid, Card, Divider } from "@mui/material";
 import Image from "next/image";
-import BlogElement from "../type/BlogElement";
 import { Fade, Slide } from "react-awesome-reveal";
+import { store } from "../state/store";
 
 export default function PackageDetail() {
     function buildComponents(p: UmrahPackage) {
@@ -115,53 +115,13 @@ export default function PackageDetail() {
         return arr;
     }
 
-    const [packageToView, setPackageToView] = useState<UmrahPackage>(
-        UmrahPackage.getDummy()
-    );
+    const packageToView = store.getState().home.selectedPackage;
 
-    function parseData(data: any) {
-        const packsResponse: PacksResponse = data.map((category: any) => ({
-            id: category.id,
-            name: category.name,
-            status: category.status,
-            created_at: category.created_at,
-            updated_at: category.updated_at,
-            list: category.list.map((pack: any) => UmrahPackage.fromJson(pack)),
-        }));
 
-        setPacks(packsResponse);
-        setPackageToView(packsResponse[0].list[0]);
-
-        console.log(packsResponse);
-    }
-    const [packs, setPacks] = useState<PacksResponse>();
-    const [loading, setLoading] = useState(true);
-
-    const props: ApiCallProps = {
-        postUrl: GET_PACKAGES,
-        data: undefined,
-        onStart: function (): void {
-            setLoading(true);
-        },
-        onProgressEnd: function (): void {
-            setLoading(false);
-        },
-        onSuccess: function (res: any) {
-            parseData(res);
-        },
-        onUnexpected: function (res: any) {
-            console.log("Unexpected Result:", res);
-        },
-    };
-
-    useEffect(() => {
-        makeGetCall(props);
-    }, []);
 
     return (
         <div className="w-full flex text-white">
-            {packs?.length != 0 && packageToView instanceof UmrahPackage && (
-                <div className="w-full  bg-black ">
+             <div className="w-full  bg-black ">
                     <Card
                         className="w-full  "
                         sx={{ borderRadius: 2 ,backgroundColor:transparentBlack}}
@@ -388,7 +348,6 @@ export default function PackageDetail() {
                         </div>
                     </Card>
                 </div>
-            )}
         </div>
     );
 }
