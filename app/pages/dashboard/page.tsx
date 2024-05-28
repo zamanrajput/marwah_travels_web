@@ -136,7 +136,7 @@ export const TabPanel: React.FC<TabPanelProps> = ({ children, value, index }) =>
 
             aria-labelledby={`tab-${index}`}
             style={{ width: '100%' }}
-        >
+        >d
             {value === index && <Box p={0}>{children}</Box>}
         </div>
     );
