@@ -99,7 +99,7 @@ const InquiryForm = () => {
 
     <div className='w-full  '>
 
-      <Grid container spacing={2} sm={12}>
+      <Grid container spacing={2} >
         {/* 1 */}
         <Toaster position='bottom-right'  />
 
