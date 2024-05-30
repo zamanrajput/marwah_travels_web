@@ -1,6 +1,6 @@
 import { transparentBlack, lightWhite } from "@/constants";
 
-import { Fade, Rotate, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import CustomPackageForm from "./CustomPackageForm";
 
 export default function CustomPackageSection() {

@@ -11,6 +11,7 @@ import HotelsTab from '../../admin/tabs/HotelsTab';
 import { CustomPackagesTab } from '../../admin/tabs/CustomPackagesTab';
 import { ReviewsTab } from '../../admin/tabs/ReviewsTab';
 import { getAdminFrame, getUserFrame } from '@/app/layout';
+import TabPanel from '@/app/type/TabPanel';
 
 const index: React.FC = () => {
     const [value, setValue] = useState(6);
@@ -121,25 +122,7 @@ const index: React.FC = () => {
     );
 };
 
-export interface TabPanelProps {
-    children?: React.ReactNode;
-    index: number;
-    value: number;
-}
 
-export const TabPanel: React.FC<TabPanelProps> = ({ children, value, index }) => {
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`tabpanel-${index}`}
 
-            aria-labelledby={`tab-${index}`}
-            style={{ width: '100%' }}
-        >d
-            {value === index && <Box p={0}>{children}</Box>}
-        </div>
-    );
-};
 
 export default index;

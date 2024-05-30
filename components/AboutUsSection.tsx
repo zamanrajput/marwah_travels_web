@@ -12,7 +12,7 @@ const AboutUsSection = () => {
     <div  >
       <Navbar />
 
-      <section  style={{height:"800px"-100}} className="max-container padding-container flex flex-col  pb-10 md:gap-10 lg:py-10 xl:flex-row">
+      <section  style={{height:"800px"}} className="max-container padding-container flex flex-col  pb-10 md:gap-10 lg:py-10 xl:flex-row">
 
 
 
