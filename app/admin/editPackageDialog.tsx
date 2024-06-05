@@ -12,7 +12,7 @@ import {
 import { UmrahPackage } from "../type/UmrahPackage";
 import { IconCameraPlus, IconList } from "@tabler/icons-react";
 import Image from "next/image";
-import { BACKEND_BASE_URL } from "../db/Routes";
+import { BACKEND_BASE_URL, FILE_BASE_URL } from "../db/Routes";
 
 interface EditPackageDialogProps {
     packageToUpdate: UmrahPackage | undefined;
@@ -62,8 +62,8 @@ function EditPackageDialog({
 
     function getImageUrl(url: any) {
         if (isValidImageUrl(url)) {
-            console.log(BACKEND_BASE_URL + url);
-            return BACKEND_BASE_URL + url;
+            // console.log(BACKEND_BASE_URL + url);
+            return FILE_BASE_URL + url;
         } else {
             return url;
         }

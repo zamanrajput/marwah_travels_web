@@ -11,7 +11,7 @@ import { UmrahPackage } from "../type/UmrahPackage";
 import { Blog } from "../type/Blog";
 import Image from "next/image";
 import { IconCameraPlus, IconList } from "@tabler/icons-react";
-import { BACKEND_BASE_URL } from "../db/Routes";
+import { BACKEND_BASE_URL, FILE_BASE_URL } from "../db/Routes";
 import BlogElement from "../type/BlogElement";
 import { resourceLimits } from "worker_threads";
 import { Umbrella } from "@mui/icons-material";
@@ -152,7 +152,7 @@ function EditBlogDialog({
 
     function getImageUrl(url: any) {
         if (url.includes('blogs_images')) {
-            return BACKEND_BASE_URL + url;
+            return FILE_BASE_URL + url;
         } else {
             return url;
         }

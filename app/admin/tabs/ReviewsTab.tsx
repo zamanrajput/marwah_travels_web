@@ -1,4 +1,4 @@
-import { BACKEND_BASE_URL, GET_BLOGS, GET_DELETE_BLOG, GET_DELETE_INQUIRY, GET_DELETE_PACKAGE, GET_DELETE_REVIEW, GET_REVIEWS } from "@/app/db/Routes";
+import { BACKEND_BASE_URL, FILE_BASE_URL, GET_BLOGS, GET_DELETE_BLOG, GET_DELETE_INQUIRY, GET_DELETE_PACKAGE, GET_DELETE_REVIEW, GET_REVIEWS } from "@/app/db/Routes";
 import { ApiCallProps, createBlog, makeGetCall, updateBlogCloud } from "@/app/db/api";
 import { Blog } from "@/app/type/Blog";
 import BlogElement from "@/app/type/BlogElement";
@@ -281,7 +281,7 @@ export function ReviewsTab() {
                   {inquiry.created_at.toString()}
                 </h1>
 
-                <div onClick={() => setVideoUrl(BACKEND_BASE_URL + inquiry.video_url)} className="w-full flex items-center justify-center h-44">
+                <div onClick={() => setVideoUrl(FILE_BASE_URL + inquiry.video_url)} className="w-full flex items-center justify-center h-44">
                   <PlayArrow fontSize="large" />
                 </div>
 

@@ -1,5 +1,5 @@
 'use client'
-import { BACKEND_BASE_URL, GET_REVIEWS } from "@/app/db/Routes";
+import { BACKEND_BASE_URL, FILE_BASE_URL, GET_REVIEWS } from "@/app/db/Routes";
 import { ApiCallProps, makeGetCall } from "@/app/db/api";
 import { getUserFrame } from "@/app/layout";
 import { Review } from "@/app/type/Review";
@@ -50,7 +50,7 @@ export default function TestimonialsPage() {
 
                                 style={{ borderRadius: 10 }}
                                 height={200}
-                                url={BACKEND_BASE_URL + e.video_url}
+                                url={FILE_BASE_URL + e.video_url}
                                 controls
                             />
                             <span className="font-bold mt-2">{e.user_name}</span>

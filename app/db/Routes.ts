@@ -1,12 +1,13 @@
 var debug = true;
-export var APP_URL = "http://localhost:3000"; 
+export var APP_URL = "https://mtumrah.com"; 
 
 
-export var BACKEND_BASE_URL = "http://192.168.0.108:8000";
+export var BACKEND_BASE_URL = "https://database.mtumrah.com";
 export var API_BASE_URL = BACKEND_BASE_URL + "/api";
 if (debug) {
 }
 
+export const  FILE_BASE_URL  = API_BASE_URL+"/files?path="; 
 
 //panel
 export const GET_CATEGORIES = API_BASE_URL+'/panel/categories';

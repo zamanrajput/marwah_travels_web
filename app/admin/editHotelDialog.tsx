@@ -13,7 +13,7 @@ import { UmrahPackage } from "../type/UmrahPackage";
 import { IconCameraPlus, IconList } from "@tabler/icons-react";
 import Image from "next/image";
 import { Hotel } from "../type/Hotel";
-import { BACKEND_BASE_URL } from "../db/Routes";
+import { BACKEND_BASE_URL, FILE_BASE_URL } from "../db/Routes";
 
 interface AddHotelDialogProps {
     hotelToEdit: Hotel ;
@@ -89,7 +89,7 @@ function EditHotelDialog({
 
     function getImageUrl(url:string){
         if(url.includes('hotel_images')){
-            return BACKEND_BASE_URL+url;
+            return FILE_BASE_URL+url;
         }
         return url;
         
